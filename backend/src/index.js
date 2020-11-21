@@ -21,7 +21,7 @@ app.get('/projects', (request, response) => {
 })
 
 app.post('/projects', (request, response) => {
-    const { title, owner }= request.body
+    const { title, owner } = request.body
 
     const project = { id: uuidv4(), title, owner }
 
@@ -70,3 +70,4 @@ const port = process.env.PORT || 5000
 
 // initializes the server and logs a message
 server = app.listen(port, () => console.log(`Server running on port ${port}`))
+
