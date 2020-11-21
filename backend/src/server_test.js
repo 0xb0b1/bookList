@@ -1,3 +1,6 @@
+// nodejs snippets  
+// don't take it serious
+
 const http = require('http')
 
 http.createServer((request, response) => {
