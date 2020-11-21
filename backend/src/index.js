@@ -10,6 +10,7 @@ const projects =  []
 // converts API responses to JSON for easy use
 app.use(express.json())
 
+
 app.get('/projects', (request, response) => {
     const { title }= request.query
 
@@ -20,6 +21,7 @@ app.get('/projects', (request, response) => {
     return response.json(results)
 })
 
+
 app.post('/projects', (request, response) => {
     const { title, owner } = request.body
 
@@ -29,6 +31,7 @@ app.post('/projects', (request, response) => {
 
     return response.json(project)
 })
+
 
 app.put('/projects/:id', (request, response) => {
     const { id } = request.params
@@ -51,6 +54,7 @@ app.put('/projects/:id', (request, response) => {
     return response.json(project)
 })
 
+
 app.delete('/projects/:id', (request, response) => {
     const { id } = request.params
 
@@ -64,6 +68,7 @@ app.delete('/projects/:id', (request, response) => {
 
     return response.status(204).send()
 })
+
 
 // sets the port number depending if we are in production or development
 const port = process.env.PORT || 5000
