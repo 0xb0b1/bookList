@@ -1,6 +1,8 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const { v4: uuidv4 } = require('uuid')
+// const mongoose = require('mongoose')
+// const cors = require('cors')
+
 
 // initializes the express application
 const app = express()
