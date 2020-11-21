@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const { v4: uuidv4 } = require('uuid')
 
 // initializes the express application
@@ -72,6 +73,7 @@ app.delete('/projects/:id', (request, response) => {
 
 // sets the port number depending if we are in production or development
 const port = process.env.PORT || 5000
+
 
 // initializes the server and logs a message
 server = app.listen(port, () => console.log(`Server running on port ${port}`))
