@@ -7,11 +7,40 @@ class Book {
     }
 }
 
+// Store Class: Handles Storage
+class Storage {
+    static getBooks() {
+        let books = localStorage.getItem("book");
+
+        return books === null
+            ? (books = [])
+            : JSON.parse(localStorage.getItem("books")) || [];
+    }
+
+    static addBook(book) {
+        const books = Storage.getBooks();
+
+        books.push(book);
+
+        localStorage.setItem("books", JSON.stringify(book));
+    }
+
+    static removeBook(isbn) {
+        const books = Storage.getBooks();
+
+        books.forEach((book, index) => {
+            if (book.isbn === isbn) {
+                books.splice(index, 1);
+            }
+        });
+    }
+}
+
 // UI Class: Handle UI Tasks
 class UI {
     // methods: displayBooks, addBookToList, showAlert, clearFields
     static displayBooks() {
-        const books = Store.getBooks();
+        const books = Storage.getBooks();
 
         books.forEach((book) => UI.addBookToList(book));
     }
@@ -56,43 +85,6 @@ class UI {
     }
 }
 
-// Store Class: Handles Storage
-class Store {
-    static getBooks() {
-        let books;
-
-        if (localStorage.getItem("books") === null) {
-            books = [];
-        } else {
-            books = JSON.parse(localStorage.getItem("books"));
-        }
-        /* localStorage.getItem("books" === null)
-            ? (books = [])
-            : (books = JSON.parse(localStorage.getItem("books")));
-            */
-
-        return books;
-    }
-
-    static addBook(book) {
-        const books = Store.getBooks();
-
-        books.push(book);
-
-        localStorage.getItem("books", JSON.stringify(books));
-    }
-
-    static removeBook(isbn) {
-        const books = Store.getBooks();
-
-        books.forEach((book, index) => {
-            if (book.isbn === isbn) {
-                books.splice(index, 1);
-            }
-        });
-    }
-}
-
 // Event: Display Books
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
@@ -117,7 +109,7 @@ document.querySelector("#book-form").addEventListener("submit", (event) => {
         UI.addBookToList(book);
 
         // Add book to localStorage
-        Store.addBook(book);
+        Storage.addBook(book);
 
         // show success message
         UI.showAlert("Book added", "success");
@@ -134,7 +126,7 @@ document.querySelector("#book-list").addEventListener("click", (event) => {
     event.target.parentElement.parentElement.remove();
 
     // Remove book from store
-    Store.removeBook(
+    Storage.removeBook(
         event.target.parentElement.previousElementSibling.textContent
     );
 
