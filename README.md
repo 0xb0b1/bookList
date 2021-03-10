@@ -1,4 +1,4 @@
-<h1 align="center">React "Todo List"</h1>
+<h1 align="center">Book Shelf</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/paulo-vicente-6abab0198/">
@@ -10,7 +10,7 @@
   <a href="https://github.com/0xb0b1/bookList/graphs/commit-activity">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-03B0E8.svg" target="_blank" />
   </a>
-  <a href="https://github.com/0xb0b1/bookList/blob/master/LICENSE">
+  <a href="https://github.com/0xb0b1/bookList/blob/main/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-03B0E8.svg" target="_blank" />
   </a>
   <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/0xb0b1/bookList?color=03B0E8" />
