@@ -18,7 +18,7 @@
   <img alt="" src="https://img.shields.io/github/repo-size/0xb0b1/bookList?color=c9c9c9" />
 </p>
 
-> This project was made to practice the reactjs skills learned at the ignite bootcamp on rocketseat.
+> Book shelf app I built utilizing a bootstrap template.
 
 
 <br />
